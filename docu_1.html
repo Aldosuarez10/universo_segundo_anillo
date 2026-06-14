@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Proyección | Teoría del Interpreteo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">EL SEGUNDO ANILLO</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="btn-secondary" style="padding: 6px 15px; font-size: 0.85rem;">← Volver al Inicio</a></li>
+        </ul>
+    </nav>
+
+    <main class="cinema-room fade-in">
+        
+        <div class="cinema-info">
+            <h1>Teoría del Interpreteo</h1>
+            <p>La era geológica que perdió la ciencia. Un viaje por los misterios de la Tierra profunda.</p>
+        </div>
+
+        <div class="projection-cell">
+            <div class="video-wrapper">
+                <div class="video-poster" onclick="playVideo('1D4odIRr_5i63NkfUTXqhguvXdLA8_8dt')">
+                    <img src="img/portada-interpreteo.jpg" alt="Teoría del Interpreteo">
+                    <div class="play-button">▶</div>
+                    <div class="play-text">IR AL DOCUMENTAL</div>
+                </div>
+                
+                <iframe id="video-frame" src="" allow="autoplay" allowfullscreen></iframe>
+            </div>
+            <div class="cell-base"></div>
+        </div>
+
+    </main>
+
+    <div class="share-section fade-in">
+        <p>Compartí esta obra:</p>
+        <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aldosuarez10.github.io/universo_segundo_anillo/docu_1.html" target="_blank" class="share-btn facebook" title="Compartir en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Teoría del Interpreteo - Documental&url=https://aldosuarez10.github.io/universo_segundo_anillo/docu_1.html" target="_blank" class="share-btn twitter" title="Compartir en X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://wa.me/?text=Teoría del Interpreteo - https://aldosuarez10.github.io/universo_segundo_anillo/docu_1.html" target="_blank" class="share-btn whatsapp" title="Compartir por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            document.querySelector('.video-poster').style.display = 'none';
+            document.getElementById('video-frame').src = 'https://drive.google.com/file/d/' + videoId + '/preview';
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
