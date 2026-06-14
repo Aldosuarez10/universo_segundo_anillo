@@ -6,10 +6,10 @@
     <title>Sala de Proyección | El Segundo Anillo</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Navegación simplificada para la sala -->
     <nav class="navbar">
         <div class="logo">EL SEGUNDO ANILLO</div>
         <ul class="nav-links">
@@ -17,7 +17,6 @@
         </ul>
     </nav>
 
-    <!-- Contenedor principal de la sala -->
     <main class="cinema-room fade-in">
         
         <div class="cinema-info">
@@ -25,28 +24,42 @@
             <p>El inicio de todo. Donde el destino se sella y el primer anillo cobra vida.</p>
         </div>
 
-        <!-- LA CELDA DE PROYECCIÓN -->
         <div class="projection-cell">
             <div class="video-wrapper">
-		<div class="projection-cell">
-        <div class="video-wrapper">
-
-        <iframe
-    src="https://drive.google.com/file/d/1_hDxtHO3Ac04fZEpOcvvfIHTHQ3K3R-o/preview"
-    allow="autoplay"
-    allowfullscreen>
-        </iframe>
-
-        </div>
-
-    <div class="cell-base"></div>
-</div>
-</div>
-            <!-- Base decorativa de la celda -->
+                <div class="video-poster" onclick="playVideo('1_hDxtHO3Ac04fZEpOcvvfIHTHQ3K3R-o')">
+                    <img src="img/portada-segundo.jpg" alt="El Segundo Anillo">
+                    <div class="play-button">▶</div>
+                    <div class="play-text">IR A LA PELÍCULA</div>
+                </div>
+                
+                <iframe id="video-frame" src="" allow="autoplay" allowfullscreen></iframe>
+            </div>
             <div class="cell-base"></div>
         </div>
 
     </main>
+
+    <div class="share-section fade-in">
+        <p>Compartí esta obra:</p>
+        <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aldosuarez10.github.io/universo_segundo_anillo/ver_1.html" target="_blank" class="share-btn facebook" title="Compartir en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=El Segundo Anillo - Una saga de ciencia ficción&url=https://aldosuarez10.github.io/universo_segundo_anillo/ver_1.html" target="_blank" class="share-btn twitter" title="Compartir en X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://wa.me/?text=El Segundo Anillo - https://aldosuarez10.github.io/universo_segundo_anillo/ver_1.html" target="_blank" class="share-btn whatsapp" title="Compartir por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            document.querySelector('.video-poster').style.display = 'none';
+            document.getElementById('video-frame').src = 'https://drive.google.com/file/d/' + videoId + '/preview';
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
