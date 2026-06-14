@@ -6,6 +6,7 @@
     <title>Sala de Proyección | Principium</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,16 +26,40 @@
 
         <div class="projection-cell">
             <div class="video-wrapper">
-                <iframe
-                    src="https://drive.google.com/file/d/1S01qcAD9Fl6YjbRqh-NvBvutgfdZdA7E/preview"
-                    allow="autoplay"
-                    allowfullscreen>
-                </iframe>
+                <div class="video-poster" onclick="playVideo('1S01qcAD9Fl6YjbRqh-NvBvutgfdZdA7E')">
+                    <img src="img/portada-principium.jpg" alt="Principium">
+                    <div class="play-button">▶</div>
+                    <div class="play-text">IR A LA PELÍCULA</div>
+                </div>
+                
+                <iframe id="video-frame" src="" allow="autoplay" allowfullscreen></iframe>
             </div>
             <div class="cell-base"></div>
         </div>
 
     </main>
+
+    <div class="share-section fade-in">
+        <p>Compartí esta obra:</p>
+        <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aldosuarez10.github.io/universo_segundo_anillo/ver_2.html" target="_blank" class="share-btn facebook" title="Compartir en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Principium - Precuela de El Segundo Anillo&url=https://aldosuarez10.github.io/universo_segundo_anillo/ver_2.html" target="_blank" class="share-btn twitter" title="Compartir en X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://wa.me/?text=Principium - https://aldosuarez10.github.io/universo_segundo_anillo/ver_2.html" target="_blank" class="share-btn whatsapp" title="Compartir por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            document.querySelector('.video-poster').style.display = 'none';
+            document.getElementById('video-frame').src = 'https://drive.google.com/file/d/' + videoId + '/preview';
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
