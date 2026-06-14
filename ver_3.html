@@ -6,6 +6,7 @@
     <title>Sala de Proyección | Nikola</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,17 +26,40 @@
 
         <div class="projection-cell">
             <div class="video-wrapper">
-                <!-- REEMPLAZA ESTE ID cuando subas el video a Drive -->
-                <iframe
-				src="https://drive.google.com/file/d/1xyLIvVKn7hxFkIHrPdo8Zvnx2XcU12z4/preview"
-				allow="autoplay"
-				allowfullscreen>
-				</iframe>
+                <div class="video-poster" onclick="playVideo('1xyLIvVKn7hxFkIHrPdo8Zvnx2XcU12z4')">
+                    <img src="img/portada-nikola.jpg" alt="Nikola">
+                    <div class="play-button">▶</div>
+                    <div class="play-text">IR AL CORTO</div>
+                </div>
+                
+                <iframe id="video-frame" src="" allow="autoplay" allowfullscreen></iframe>
             </div>
             <div class="cell-base"></div>
         </div>
 
     </main>
+
+    <div class="share-section fade-in">
+        <p>Compartí esta obra:</p>
+        <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aldosuarez10.github.io/universo_segundo_anillo/ver_3.html" target="_blank" class="share-btn facebook" title="Compartir en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Nikola: Misión semi cumplida - Corto animado sci-fi&url=https://aldosuarez10.github.io/universo_segundo_anillo/ver_3.html" target="_blank" class="share-btn twitter" title="Compartir en X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://wa.me/?text=Nikola: Misión semi cumplida - https://aldosuarez10.github.io/universo_segundo_anillo/ver_3.html" target="_blank" class="share-btn whatsapp" title="Compartir por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            document.querySelector('.video-poster').style.display = 'none';
+            document.getElementById('video-frame').src = 'https://drive.google.com/file/d/' + videoId + '/preview';
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
